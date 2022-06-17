@@ -90,6 +90,12 @@ func Parse(userAgent string) UserAgent {
 		ua.Device = "iPhone"
 		ua.Mobile = true
 
+	case tokens.exists("iPod"):
+		ua.OS = IOS
+		ua.OSVersion = tokens.findMacOSVersion()
+		ua.Device = "iPod"
+		ua.Mobile = true
+
 	case tokens.exists("iPad"):
 		ua.OS = IOS
 		ua.OSVersion = tokens.findMacOSVersion()
